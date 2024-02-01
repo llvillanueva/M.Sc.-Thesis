@@ -1,0 +1,249 @@
+\documentclass[final]{nip} %%use nip class
+
+%% to add options: phd, ms, bs, applied
+\usepackage{fancyhdr}
+\fancyhf{}
+\rhead{\textbf{\nouppercase{\rightmark}}}
+\cfoot{\thepage}
+
+%%packages to be used.
+\usepackage[square,numbers,sort&compress]{natbib}
+   %% square-bracketed, numbered, sorted, and compressed citations
+
+\usepackage{verbatim} %% for \verbatiminput
+\usepackage{graphicx} %% for the graphics environment
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{newlfont}
+\usepackage{enumitem}
+
+% todo package: TO BE REMOVED IN THE FINAL DRAFT
+\usepackage[colorinlistoftodos,prependcaption,textsize=footnotesize]{todonotes}
+
+%for figures
+\usepackage{caption}
+\usepackage{subcaption}
+
+%for table
+\usepackage[]{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+%for python codes
+\usepackage{color}
+\usepackage{listings}
+\usepackage{setspace}
+\definecolor{Code}{rgb}{0,0,0}
+\definecolor{Decorators}{rgb}{0.5,0.5,0.5}
+\definecolor{Numbers}{rgb}{0.5,0,0}
+\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5}
+\definecolor{Keywords}{rgb}{0,0,1}
+\definecolor{self}{rgb}{0,0,0}
+\definecolor{Strings}{rgb}{0,0.63,0}
+\definecolor{Comments}{rgb}{0,0.63,1}
+\definecolor{Backquotes}{rgb}{0,0,0}
+\definecolor{Classname}{rgb}{0,0,0}
+\definecolor{FunctionName}{rgb}{0,0,0}
+\definecolor{Operators}{rgb}{0,0,0}
+\definecolor{Background}{rgb}{0.98,0.98,0.98}
+\lstdefinelanguage{Python}{
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=1em,
+xleftmargin=1em,
+framextopmargin=2em,
+framexbottommargin=2em,
+breaklines=true,
+showspaces=false,
+showtabs=false,
+showstringspaces=false,
+frame=l,
+tabsize=4,
+% Basic
+basicstyle=\ttfamily\small\setstretch{1},
+backgroundcolor=\color{Background},
+% Comments
+commentstyle=\color{Comments}\slshape,
+% Strings
+stringstyle=\color{Strings},
+comment=[l]{\#},
+morecomment=[s][\color{Strings}]{"}{"},
+morecomment=[s][\color{Strings}]{'}{'},
+% keywords
+morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
+keywordstyle={\color{Keywords}\bfseries},
+% additional keywords
+morekeywords={[2]@invariant,pylab,numpy,np,scipy},
+keywordstyle={[2]\color{Decorators}\slshape},
+emph={self},
+emphstyle={\color{self}\slshape},
+%
+}
+
+\lstdefinelanguage{xml}{
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=1em,
+xleftmargin=1em,
+framextopmargin=2em,
+framexbottommargin=2em,
+breaklines=true,
+showspaces=false,
+showtabs=false,
+showstringspaces=false,
+frame=l,
+tabsize=4,
+% Basic
+basicstyle=\ttfamily\small\setstretch{1},
+backgroundcolor=\color{Background},
+%
+}
+
+% %% Header section
+% \title{Ground state correlations and entanglement in an extended Hubbard model with Ising-like interaction}
+%% Header section
+\title{Reduction Formulas of the Kampé de Fériet Function Arising from the Method of Finite-part Integration}
+%%required
+\author{Lloyd L. Villanueva} %% required
+\email{llvillanueva@up.edu.ph}%% appears only when draft version use \draft option.
+\adviser{Eric A. Galapon}{Ph.D.}%% required
+\reader{Francis Norman C. Paraan}{Ph.D.}%% required
+% \secondReader{}{Ph.D.}%% optional if with coadviser
+%\coadviser{Another A. Adviser}{Ph.D.}%% replace "\coadviser" with "\secondReader" if no co-adviser
+\director{Wilson O. Garcia}{Ph.D.}%% required
+\dean{Giovanni A. Tapang}{Ph.D.} %%required
+\gradyear{2021} \gradmonth{July} %%graduation month and year
+\defenseDate{June 2021}
+
+%% Preliminary pages' contents input here..
+\acknowledgments{ \input{acknowledgments.tex} } %% optional, see acknowledgment.tex for sample content.
+\abstract{ \input{abstract.tex} } %% see abstract.tex
+\pacs{}
+
+%\acronym{\input{SFlists.tex}}
+%macros
+%\DeclarePairedDelimiter\bra{\langle}{\rvert}
+%\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+%\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+\newcommand{\bra}[1]{\ensuremath{\left\langle#1\right|}}
+\newcommand{\ket}[1]{\ensuremath{\left|#1\right\rangle}}
+\newcommand{\average}[1]{\ensuremath{\left\langle#1\right\rangle}}
+\newcommand{\bracket}[2]{\ensuremath{\left\langle #1 \middle| #2 \right\rangle}}
+\newcommand{\matrixel}[3]{\ensuremath{\left\langle #1 \middle| #2 \middle| #3 \right\rangle}}
+
+
+%finite-part
+\newcommand{\bbint}[2]{\ensuremath{\;\backslash\!\!\!\!\backslash\!\!\!\!\!\int_{#1}^{#2}}}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+%hypergeom
+\newmuskip\pFqmuskip
+\newcommand*\pFq[6][8]{%
+  \begingroup % only local assignments
+  \pFqmuskip=#1mu\relax
+  \mathchardef\normalcomma=\mathcode`,
+  % make the comma math active
+  \mathcode`\,=\string"8000
+  % and define it to be \pFqcomma
+  \begingroup\lccode`\~=`\,
+  \lowercase{\endgroup\let~}\pFqcomma
+  % typeset the formula
+  {}_{#2}F_{#3}{\left(\genfrac..{0pt}{}{#4}{#5}\Bigg| #6\right)}%
+  \endgroup
+}
+\newcommand{\pFqcomma}{{\normalcomma}\mskip\pFqmuskip}
+\usepackage{suffix}
+\usepackage{mathtools}
+
+%kampe
+\newmuskip\pFqmuskip
+\newcommand*\pKq[6][8]{%
+  \begingroup % only local assignments
+  \pFqmuskip=#1mu\relax
+  \mathchardef\normalcomma=\mathcode`,
+  % make the comma math active
+  \mathcode`\,=\string"8000
+  % and define it to be \pFqcomma
+  \begingroup\lccode`\~=`\,
+  \lowercase{\endgroup\let~}\pFqcomma
+  % typeset the formula
+  F_{#2}^{#3}{\left(\genfrac..{0pt}{}{#4}{#5}\Bigg| #6\right)}%
+  \endgroup
+}
+\newcommand{\pKqcomma}{{\normalcomma}\mskip\pFqmuskip}
+
+
+%PV
+\def\Xint#1{\mathchoice
+   {\XXint\displaystyle\textstyle{#1}}%
+   {\XXint\textstyle\scriptstyle{#1}}%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+   \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+
+%Psi
+\newmuskip\pFqmuskip
+\newcommand*\pPq[7][8]{%
+  \begingroup % only local assignments
+  \pFqmuskip=#1mu\relax
+  \mathchardef\normalcomma=\mathcode`,
+  % make the comma math active
+  \mathcode`\,=\string"8000
+  % and define it to be \pFqcomma
+  \begingroup\lccode`\~=`\,
+  \lowercase{\endgroup\let~}\pFqcomma
+  % typeset the formula
+  {}_{#2}\Tilde{\psi}_{#3}{\left(\genfrac..{0pt}{}{#4}{#5} \, ; \,{#6} \,\Bigg| #7\right)}%
+  \endgroup
+}
+\newcommand{\pPqcomma}{{\normalcomma}\mskip\pFqmuskip}
+
+
+
+
+%% Main document section
+\begin{document} 
+
+\maketitle %% creates title page, do not remove this line.
+\makePrelim %% creates preliminary pages, do not remove this line.
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proposition}{Proposition}[chapter]
+\pagestyle{fancy}
+\setlength{\headsep}{20pt}
+
+
+
+\input{chapter_1.tex}
+%\input{chapter_2.tex}
+\input{chapter_3.tex}
+\input{chapter_4.tex}
+\input{chapter_5.tex}
+\input{chapter_6.tex}
+
+
+
+
+\bibliography{bibref}
+\bibliographystyle{unsrtnat}
+%\bibliography{biblio} %% see file: "biblio.bib"
+%\bibliographystyle{plain}
+%\bibliography{biblio} %% see file: "biblio.bib"
+
+\appendix
+\input{appendix.tex}
+
+
+
+\end{document}
+%%end of main.tex

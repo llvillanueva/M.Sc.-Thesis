@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: unsrtnat.bst
+Database file #1: bibref.bib
+Warning--empty journal in slater1966generalized
+Warning--empty journal in borngasser1933uber
+Warning--there's a number but no volume in burchnall1941expansions
+Warning--empty journal in exton1976multiple
+Warning--empty journal in exton1978handbook
+Warning--empty journal in srivastava1985multiple
+Warning--there's a number but no series in pipkin1991course
+Warning--can't use both volume and number fields in ali2013some
+Warning--empty year in nbt
+Warning--empty year in wolfram
+Warning--empty year in wolfram1
+Warning--empty journal in hansen1975table
+Warning--empty author in 2008189
+Warning--empty year in digamma
+Warning--empty year in incgamma2
+Warning--empty year in wolfram2F2
+Warning--empty year in incgamma
+Warning--empty year in 2f21
+Warning--empty year in NIST:DLMF
+You've used 66 entries,
+            2481 wiz_defined-function locations,
+            932 strings with 14622 characters,
+and the built_in function-call counts, 22822 in all, are:
+= -- 2096
+> -- 638
+< -- 76
++ -- 312
+- -- 177
+* -- 1477
+:= -- 3312
+add.period$ -- 210
+call.type$ -- 66
+change.case$ -- 122
+chr.to.int$ -- 63
+cite$ -- 93
+duplicate$ -- 1316
+empty$ -- 2406
+format.name$ -- 275
+if$ -- 5088
+int.to.chr$ -- 4
+int.to.str$ -- 67
+missing$ -- 64
+newline$ -- 345
+num.names$ -- 170
+pop$ -- 640
+preamble$ -- 1
+purify$ -- 66
+quote$ -- 0
+skip$ -- 839
+stack$ -- 0
+substring$ -- 1131
+swap$ -- 252
+text.length$ -- 24
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 432
+warning$ -- 19
+while$ -- 184
+width$ -- 0
+write$ -- 857
+(There were 19 warnings)

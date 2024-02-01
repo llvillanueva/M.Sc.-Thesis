@@ -1,0 +1,1426 @@
+%\chapter{Hypergeometric Function}
+
+
+
+
+\chapter{Mathematica Notebook for numerical verification} \label{mathematica}
+
+
+Since Mathematica still do not have syntax for the Kamp{\' e} de F{\' e}riet Function. To evaluate the Kamp{\' e} de F{\' e}riet Function, we expressed it as a differential of the generalized hypergeometric function found in \eqref{HtKdF}, which is expressed as 
+\begin{align}
+\begin{split}
+&\left.\frac{\partial}{\partial\mu}  \pFq{p+1}{q+1}{\mu,\vec{a}}{\sigma,\vec{b}}{z}\right|_{\sigma=\mu} \\& \hspace{30mm} = \frac{z}{ \mu} \frac{ (\vec{a})_1}{(\vec{b})_1} \; F^{p:\;1;\;2}_{q+1:- ;\;1}\left[\begin{array}{lll}
+\vec{a}+1&: 1 &; \mu,1  \\
+2, \vec{b}+1&:- &; \mu+1 
+\end{array};\; z,z\right] .
+\end{split}
+\end{align}
+
+\section*{Numerical Confirmation of Theorem 4.1}
+
+For complex $z$ and integer $n$ the reduction formula holds:
+
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHS41}[\text{z$\_$},\text{m$\_$} ]\text{:=}}
+\pmb{N[ \text{Derivative}[\{1\},\{0\},0][\text{HypergeometricPFQ}][\{m\},\{m\},z],}\pmb{10]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHS41}[\text{z$\_$},\text{m$\_$}]\text{:=}}
+\pmb{-N\left[\text{Exp}[z]\left(-\text{Log}[z]+\text{PolyGamma}[m]+\text{Gamma}[m](-1)^m\right.\right.}
+\pmb{\text{Gamma}[1-m,z]-}
+\pmb{\left.\text{Gamma}[m](-1)^m\text{Sum}\left[z^{k-m+1}\frac{(-1)^k}{k!(m-1-k)},\{k,0,m-2\}\right]\right),}
+\pmb{10]}\)
+\end{doublespace}
+
+\subsection*{Randomize parameter}
+
+\begin{doublespace}
+\noindent\(\pmb{v=\text{RandomInteger}[\{1,20\},\{10\}]}\\
+\pmb{c=\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}
+\pmb{\text{AppendTo}[c,\text{RandomComplex}[\{-1-I,1+I\}]]]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{9,10,10,7,3,11,3,5,7,15\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{2.99369\, +8.57844 i,-4.67641-6.85407 i,5.39202\, -7.54396 i,-6.3679-6.70379 i,4.23325\, +8.60739 i\}\)
+\end{doublespace}
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}
+\pmb{\text{Print}[\text{LHS41}[c[[i]],v[[i]]]];}
+\pmb{\text{Print}[\text{RHS41}[c[[i]],v[[i]]]];}\\
+\pmb{\text{Print}[\text{LHS41}[c[[i]],v[[i]]]-\text{RHS41}[c[[i]],v[[i]]]];}\pmb{\text{Print}[]]}\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(-16.1983-1.01195 i\)
+
+\noindent\(-16.1983-1.01195 i\)
+
+\noindent\(\text{3.552713678800501$\grave{ }$*${}^{\wedge}$-15}-\text{5.551115123125783$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(2\)
+
+\noindent\(-0.00613085-0.00635279 i\)
+
+\noindent\(-0.00613085-0.00635279 i\)
+
+\noindent\(-\text{5.204170427930421$\grave{ }$*${}^{\wedge}$-18}+\text{2.6020852139652106$\grave{ }$*${}^{\wedge}$-18} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(3\)
+
+\noindent\(-61.3131-145.696 i\)
+
+\noindent\(-61.3131-145.696 i\)
+
+\noindent\(\text{5.684341886080802$\grave{ }$*${}^{\wedge}$-14}+\text{2.842170943040401$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(4\)
+
+\noindent\(-0.0013634-0.00253563 i\)
+
+\noindent\(-0.0013634-0.00253563 i\)
+
+\noindent\(-\text{8.673617379884035$\grave{ }$*${}^{\wedge}$-19}-\text{8.673617379884035$\grave{ }$*${}^{\wedge}$-19} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(5\)
+
+\noindent\(-114.794+28.1375 i\)
+
+\noindent\(-114.794+28.1375 i\)
+
+\noindent\(-\text{4.263256414560601$\grave{ }$*${}^{\wedge}$-14}+\text{3.907985046680551$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(6\)
+
+\noindent\(0.00602484\, -0.0517739 i\)
+
+\noindent\(0.00602479\, -0.0517739 i\)
+
+\noindent\(\text{4.8948642839517775$\grave{ }$*${}^{\wedge}$-8}-\text{8.370991282091733$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(7\)
+
+\noindent\(0.691654\, -0.0873534 i\)
+
+\noindent\(0.691654\, -0.0873534 i\)
+
+\noindent\(\text{1.1102230246251565$\grave{ }$*${}^{\wedge}$-16}+\text{1.5265566588595902$\grave{ }$*${}^{\wedge}$-16} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(8\)
+
+\noindent\(0.318326\, -0.113454 i\)
+
+\noindent\(0.318326\, -0.113454 i\)
+
+\noindent\(\text{2.942091015256665$\grave{ }$*${}^{\wedge}$-15}+\text{2.2343238370581275$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(9\)
+
+\noindent\(0.143589\, +0.375097 i\)
+
+\noindent\(0.143589\, +0.375097 i\)
+
+\noindent\(\text{1.61259894326804$\grave{ }$*${}^{\wedge}$-14}-\text{9.381384558082573$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(\text{}\)
+
+\noindent\(10\)
+
+\noindent\(0.00614681\, -0.213509 i\)
+
+\noindent\(0.00614669\, -0.213509 i\)
+
+\noindent\(\text{1.2597469477466927$\grave{ }$*${}^{\wedge}$-7}+\text{5.871436239979211$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\noindent\(\text{}\)
+
+
+\section*{Numerical Confirmation of Theorem 4.2}
+
+Let $\mu $ be any positive number, $\nu $ a positive integer, $\rho $ a positive integer; moreover, z be a real and complex. Then for $\nu $ $>$
+$\rho $,
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHST42}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}
+\pmb{N[}\\
+\pmb{\left(\left.(-1)^{\nu -\rho +1}\right/z\right)}
+\pmb{(\text{Gamma}[\nu -1]/((\mu -1)\text{Gamma}[\rho ]\text{Gamma}[\nu -\rho ]))}\\
+\pmb{\text{HypergeometricPFQ}[\{1-\nu +\rho ,1,1\},\{2-\mu ,2-\nu \},1/z]+}\\
+\pmb{\left(\left.\left(\text{Gamma}[\nu ](-1)^{\rho -\nu }\right)\right/(\text{Gamma}[\nu -\rho +1]\text{Gamma}[\rho ])\right)}\\
+\pmb{(\text{Log}[1/z]\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z]+}\\
+\pmb{\text{PolyGamma}[1]\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z]+}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{1, \mu ,\nu \},\{1,\nu -\rho +1\},z]-}\\
+\pmb{\text{PolyGamma}[\mu ]\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z]-}\\
+\pmb{\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \mu ,\nu \},\{\nu -\rho +1\},z])-}
+\pmb{\text{Sum}[\text{Binomial}[\rho -1,k]}\\
+\pmb{(\text{Pochhammer}[k-\mu -\rho +2,\rho -1-k]/\text{Gamma}[\rho ])}\\
+\pmb{(1-z)^{k-\mu -\rho +1}(1/z)^{k-\rho +1}}
+\pmb{(\text{Sum}[\text{Binomial}[k,l]\text{Pochhammer}[\nu -k+l,k-l]}\\
+\pmb{\left.\left.\left.\left.\left(\text{Gamma}[l]\left/(-1)^{k-l-\nu }\right.\right),\{l,1,k\}\right]\right),\{k,0,\rho -1\}\right],50\right]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHST42}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}
+\pmb{N\left[\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}\right.}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],50]}\)
+\end{doublespace}
+
+\subsection*{Randomize parameter}
+
+
+\begin{doublespace}
+\noindent\(\pmb{q=\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomReal}[\{2,10\},\{10\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{10\}]}\\
+\pmb{r=e+1}\\
+\)
+\end{doublespace}
+
+
+
+\begin{doublespace}
+\noindent\(\{2.6436\, +7.38533 i,5.35056\, -0.662961 i,-5.30733+4.53305 i,-6.75063+4.24345 i,-4.74694-3.30132 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{3.27385,8.80928,6.7122,7.47404,5.98983,5.92354,8.84553,8.74957,9.91794,7.81498\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{10,3,17,5,6,4,2,16,9,15\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{11,4,18,6,7,5,3,17,10,16\}\)
+\end{doublespace}
+
+\subsection*{Numerical Confirmation}
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(
+\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHST42}[q[[i]],w[[i]],e[[i]],r[[i]]]];}\\
+\pmb{\text{Print}[\text{RHST42}[q[[i]],w[[i]],e[[i]],r[[i]]]];}\\
+\pmb{\text{Print}[\text{LHST42}[q[[i]],w[[i]],e[[i]],r[[i]]]-}\\
+\pmb{\text{RHST42}[q[[i]],w[[i]],e[[i]],r[[i]]]]]}
+\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(-\text{7.530113214000718$\grave{ }$*${}^{\wedge}$-6}+\text{7.029020690925418$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(-\text{7.530113209086586$\grave{ }$*${}^{\wedge}$-6}+\text{7.0290206929789906$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(-\text{4.9141319472304455$\grave{ }$*${}^{\wedge}$-15}-\text{2.0535729353446906$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(2\)
+
+\noindent\(\text{2.725698393875094$\grave{ }$*${}^{\wedge}$-6}+\text{1.3038035855297845$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(\text{2.7256983938687293$\grave{ }$*${}^{\wedge}$-6}+\text{1.3038035855307126$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(\text{6.364605565668813$\grave{ }$*${}^{\wedge}$-18}-\text{9.281363519538996$\grave{ }$*${}^{\wedge}$-19} i\)
+
+\noindent\(3\)
+
+\noindent\(-\text{8.004195754359636$\grave{ }$*${}^{\wedge}$-11}+\text{1.6545553104629257$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(-\text{8.004145449937833$\grave{ }$*${}^{\wedge}$-11}+\text{1.6565899320982336$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(-\text{5.030442180248773$\grave{ }$*${}^{\wedge}$-16}-\text{2.0346216353079433$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(4\)
+
+\noindent\(\text{1.7688669613464899$\grave{ }$*${}^{\wedge}$-7}-\text{1.0264729431154692$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(\text{1.7688669613457593$\grave{ }$*${}^{\wedge}$-7}-\text{1.0264729430899742$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(\text{7.30565917006834$\grave{ }$*${}^{\wedge}$-20}-\text{2.5495029967864398$\grave{ }$*${}^{\wedge}$-18} i\)
+
+\noindent\(5\)
+
+\noindent\(\text{1.870782593333987$\grave{ }$*${}^{\wedge}$-6}-\text{1.1009794705892355$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(\text{1.8707825933325255$\grave{ }$*${}^{\wedge}$-6}-\text{1.100979470587447$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(\text{1.4615553504872952$\grave{ }$*${}^{\wedge}$-18}-\text{1.788510068127455$\grave{ }$*${}^{\wedge}$-18} i\)
+
+\noindent\(6\)
+
+\noindent\(-0.00283233+0.00279907 i\)
+
+\noindent\(-0.00283233+0.00279907 i\)
+
+\noindent\(-\text{5.704529730532482$\grave{ }$*${}^{\wedge}$-13}-\text{4.650138780981639$\grave{ }$*${}^{\wedge}$-13} i\)
+
+\noindent\(7\)
+
+\noindent\(0.00102432\, +0.00223225 i\)
+
+\noindent\(0.00102432\, +0.00223225 i\)
+
+\noindent\(\text{9.031330371056523$\grave{ }$*${}^{\wedge}$-13}-\text{4.6220693938892055$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(8\)
+
+\noindent\(-\text{2.480001700691875$\grave{ }$*${}^{\wedge}$-7}+\text{2.8157292983198042$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\noindent\(0.00390625\, -0.0908203 i\)
+
+\noindent\(-0.0039065+0.0908203 i\)
+
+\noindent\(9\)
+
+\noindent\(0.0000335123\, +0.000019089 i\)
+
+\noindent\(0.0000335123\, +0.000019089 i\)
+
+\noindent\(-\text{3.942260743110965$\grave{ }$*${}^{\wedge}$-15}-\text{1.373463923972848$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(10\)
+
+\noindent\(-0.000543563+0.000820645 i\)
+
+\noindent\(-0.000543563+0.000820646 i\)
+
+\noindent\(-\text{1.5892451167998783$\grave{ }$*${}^{\wedge}$-10}-\text{1.4763764462268764$\grave{ }$*${}^{\wedge}$-10} i\)
+
+\section*{Numerical Confirmation of Corollary 4.2.1}
+
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHSC42}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}
+\pmb{N[}
+\pmb{\left(\left.(-1)^{\nu -\rho +1}\right/z\right)}\\
+\pmb{(\text{Gamma}[\nu -1]/((\mu -1)\text{Gamma}[\rho ]\text{Gamma}[\nu -\rho ]))}\\
+\pmb{\text{HypergeometricPFQ}[\{1-\nu +\rho ,1,1\},\{2-\mu ,2-\nu \},1/z]+}\\
+\pmb{\left(\left.\left(\text{Gamma}[\nu ](-1)^{\rho -\nu }\right)\right/(\text{Gamma}[\nu -\rho +1]\text{Gamma}[\rho ])\right)}\\
+\pmb{(\text{Log}[1/z]\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z]+}\\
+\pmb{\text{PolyGamma}[1]\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z]-}\\
+\pmb{\text{PolyGamma}[\mu ]\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z])-}\\
+\pmb{\text{Sum}[\text{Binomial}[\rho -1,k]}\\
+\pmb{(\text{Pochhammer}[k-\mu -\rho +2,\rho -1-k]/\text{Gamma}[\rho ])}\\
+\pmb{(1-z)^{k-\mu -\rho +1}(1/z)^{k-\rho +1}}\\
+\pmb{(\text{Sum}[\text{Binomial}[k,l]\text{Pochhammer}[\nu -k+l,k-l]}\\
+\pmb{\left.\left.\left.\left(\text{Gamma}[l]\left/(-1)^{k-l-\nu }\right.\right),\{l,1,k\}\right]\right),\{k,0,\rho -1\}\right]-}\\
+\pmb{\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}}
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],10]}\\
+\\
+\pmb{\text{LHSC42}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\left(\left.\left(\text{Gamma}[\nu ](-1)^{\rho -\nu }\right)\right/(\text{Gamma}[\nu -\rho +1]\text{Gamma}[\rho ])\right)\right.}\\
+\pmb{(\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \mu ,\nu \},\{\nu -\rho +1\},z]-}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{1, \mu ,\nu \},\{1,\nu -\rho +1\},z]),10]}\)
+\end{doublespace}
+
+
+\subsection*{Randomize Parameter}
+
+\begin{doublespace}
+\noindent\(\pmb{q=\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomComplex}[\{1+I,10+10I\},\{10\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{10\}]}\\
+\pmb{r=e+3}\\
+\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{2.55224\, +7.165 i,5.74903\, -9.08356 i,6.58121\, -6.59525 i,-7.85302-3.59562 i,-8.87597+2.67478 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{3.94352\, +4.83641 i,8.2764\, +2.67117 i,7.20701\, +4.83528 i,4.44868\, +5.78578 i,6.75197\, +7.63746 i,1.34465\, +7.13969 i,8.88432\,
++1.07226 i,5.34419\, +2.64748 i,5.53311\, +4.12495 i,4.52255\, +9.8147 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{7,18,3,3,17,12,6,1,19,10\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{10,21,6,6,20,15,9,4,22,13\}\)
+\end{doublespace}
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\(
+\noindent\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}
+\pmb{\text{Print}[\text{LHSC42}[q[[i]],w[[i]],e[[i]],r[[i]]]];}\\
+\pmb{\text{Print}[\text{RHSC42}[q[[i]],w[[i]],e[[i]],r[[i]]]];}
+\pmb{\text{Print}[\text{LHSC42}[q[[i]],w[[i]],e[[i]],r[[i]]]-}
+\pmb{\text{RHSC42}[q[[i]],w[[i]],e[[i]],r[[i]]]]]}
+\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(-0.409606-0.508937 i\)
+
+\noindent\(-0.409606-0.508937 i\)
+
+\noindent\(\text{5.551115123125783$\grave{ }$*${}^{\wedge}$-17}+0. i\)
+
+\noindent\(2\)
+
+\noindent\(1.62695\, +1.24684 i\)
+
+\noindent\(1.62695\, +1.24684 i\)
+
+\noindent\(\text{2.3301360840832785$\grave{ }$*${}^{\wedge}$-12}+\text{1.1939338406818933$\grave{ }$*${}^{\wedge}$-12} i\)
+
+\noindent\(3\)
+
+\noindent\(0.992284\, +0.602025 i\)
+
+\noindent\(0.992284\, +0.602025 i\)
+
+\noindent\(-\text{2.3314683517128287$\grave{ }$*${}^{\wedge}$-15}-\text{5.551115123125783$\grave{ }$*${}^{\wedge}$-16} i\)
+
+\noindent\(4\)
+
+\noindent\(0.00849556\, +0.126801 i\)
+
+\noindent\(0.00849556\, +0.126801 i\)
+
+\noindent\(-\text{2.2551405187698492$\grave{ }$*${}^{\wedge}$-17}-\text{5.551115123125783$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(5\)
+
+\noindent\(-1.39265+1.02283 i\)
+
+\noindent\(-1.39265+1.02283 i\)
+
+\noindent\(-\text{7.327471962526033$\grave{ }$*${}^{\wedge}$-15}-\text{1.0436096431476471$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(6\)
+
+\noindent\(42790.7\, -166301. i\)
+
+\noindent\(42790.7\, -166301. i\)
+
+\noindent\(-\text{1.673470251262188$\grave{ }$*${}^{\wedge}$-10}-\text{3.2014213502407074$\grave{ }$*${}^{\wedge}$-10} i\)
+
+\noindent\(7\)
+
+\noindent\(-2.59244-0.982208 i\)
+
+\noindent\(-2.59244-0.982208 i\)
+
+\noindent\(-\text{1.7763568394002505$\grave{ }$*${}^{\wedge}$-15}-\text{5.551115123125783$\grave{ }$*${}^{\wedge}$-16} i\)
+
+\noindent\(8\)
+
+\noindent\(-0.124434+0.344949 i\)
+
+\noindent\(-0.124434+0.344949 i\)
+
+\noindent\(\text{1.3877787807814457$\grave{ }$*${}^{\wedge}$-16}-\text{5.551115123125783$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(9\)
+
+\noindent\(-34.5704-9.79646 i\)
+
+\noindent\(-34.5704-9.79646 i\)
+
+\noindent\(-\text{3.33173488797911$\grave{ }$*${}^{\wedge}$-11}-\text{7.505107646466058$\grave{ }$*${}^{\wedge}$-12} i\)
+
+\noindent\(10\)
+
+\noindent\(-4.5885-2.80474 i\)
+
+\noindent\(-4.5885-2.80474 i\)
+
+\noindent\(-\text{7.105427357601002$\grave{ }$*${}^{\wedge}$-15}+\text{3.552713678800501$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\section*{Numerical Confirmation of Theorem 4.3}
+
+Let $\mu $ be any positive number, $\nu $ a positive integer, $\rho $ a positive integer; moreover, z be a real and complex. Then for { }$\rho $$>$ $\nu $,
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHST43}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}N\left[\frac{\text{Gamma}[\rho -\nu +\mu ](-z)^{\rho -\nu }}{\text{Gamma}[\rho
+-\nu +1]\text{Gamma}[\mu ]}\right.}\\
+\pmb{\left(\text{Log}\left[\frac{1}{z}\right]\text{Hypergeometric2F1}[\rho ,\rho -\nu +\mu ,\rho -\nu +1,z]+\right.}\\
+\pmb{\text{PolyGamma}[\rho -\nu +1]*}\\
+\pmb{\text{Hypergeometric2F1}[\rho -\nu +\mu ,\rho ,\rho -\nu +1,z]+}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{\rho -\nu +1, \rho -\nu +\mu ,\rho \},\{\rho -\nu +1,\rho -\nu +1\},z]-}\\
+\pmb{\text{PolyGamma}[\rho -\nu +\mu ]\text{Hypergeometric2F1}[\rho -\nu +\mu ,}\\
+\pmb{\rho ,\rho -\nu +1,z]-}\\
+\pmb{\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \rho -\nu +\mu ,\rho \},\{\rho -\nu +1\},z])-}\\
+\pmb{\text{Sum}\left[\text{Binomial}[\rho -1,k]\frac{\text{Pochhammer}[k-\mu -\rho +2,\rho -1-k]}{\text{Gamma}[\rho ]}\right.}\\
+\pmb{(1-z)^{k-\mu -\rho +1}\left(\frac{1}{z}\right)^{k-\rho +1}}\\
+\pmb{\left(\text{Sum}\left[\text{Binomial}[k,l]\text{Pochhammer}[\nu -k+l,k-l]\frac{\text{Gamma}[l]}{(-1)^{k-l-\nu }},\right.\right.}\\
+\pmb{\{l,1,k\}]),\{k,0,\rho -1\}],100]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHST43}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}\right.}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],100]}\)
+\end{doublespace}
+
+\subsection*{Randomize Parameter}
+
+\begin{doublespace}
+\noindent\(\pmb{q=\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomComplex}[\{0+I,10+10I\},\{10\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{10\}]}\\
+\pmb{r=e+1}\\\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{-7.21872-4.24604 i,8.86386\, +3.55093 i,4.18804\, -4.41041 i,-1.7803-5.44105 i,8.30071\, -2.47988 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{1.87876\, +1.36196 i,2.33182\, +9.11698 i,5.922\, +5.0155 i,1.39034\, +2.30947 i,2.91129\, +8.46897 i,7.03893\, +2.47427 i,6.99521\,
++5.72544 i,5.58569\, +5.89784 i,4.7392\, +4.15897 i,9.59267\, +8.28296 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{12,15,10,10,4,13,5,20,2,2\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{13,16,11,11,5,14,6,21,3,3\}\)
+\end{doublespace}
+
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(
+\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHST43}[q[[i]],w[[i]],r[[i]],e[[i]]]];}
+\pmb{\text{Print}[\text{RHST43}[q[[i]],w[[i]],r[[i]],e[[i]]]];}\\
+\pmb{\text{Print}[\text{LHST43}[q[[i]],w[[i]],r[[i]],e[[i]]]-}
+\pmb{\text{RHST43}[q[[i]],w[[i]],r[[i]],e[[i]]]]]}\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(\text{6.226272277808738$\grave{ }$*${}^{\wedge}$-7}+\text{1.5289514695655155$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(\text{6.226271497620627$\grave{ }$*${}^{\wedge}$-7}+\text{1.528951352951051$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(\text{7.801881108475802$\grave{ }$*${}^{\wedge}$-14}+\text{1.1661446453756758$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(2\)
+
+\noindent\(\text{5.623285180757133$\grave{ }$*${}^{\wedge}$-10}+\text{1.633768734018198$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(\text{5.623285180671555$\grave{ }$*${}^{\wedge}$-10}+\text{1.6337687340325669$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(\text{8.557803822320486$\grave{ }$*${}^{\wedge}$-21}-\text{1.4368954420658644$\grave{ }$*${}^{\wedge}$-20} i\)
+
+\noindent\(3\)
+
+\noindent\(-\text{5.5878114549661816$\grave{ }$*${}^{\wedge}$-11}+\text{1.9408347168142518$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(\text{1.171599706140114$\grave{ }$*${}^{\wedge}$-9}+\text{1.7706724975141697$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(-\text{1.2274778206897758$\grave{ }$*${}^{\wedge}$-9}-\text{1.7512641503460271$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(4\)
+
+\noindent\(-\text{8.519427322793378$\grave{ }$*${}^{\wedge}$-7}+\text{1.5497991370306464$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(-\text{8.51943085300455$\grave{ }$*${}^{\wedge}$-7}+\text{1.5497992812418815$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(\text{3.5302111728248474$\grave{ }$*${}^{\wedge}$-13}-\text{1.4421123508105303$\grave{ }$*${}^{\wedge}$-13} i\)
+
+\noindent\(5\)
+
+\noindent\(-\text{9.294068242310079$\grave{ }$*${}^{\wedge}$-9}+\text{1.9310461536301462$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(0.000512123\, +0.000282288 i\)
+
+\noindent\(-0.000512132-0.000282094 i\)
+
+\noindent\(6\)
+
+\noindent\(-\text{3.1597639772993617$\grave{ }$*${}^{\wedge}$-6}-0.0000117902 i\)
+
+\noindent\(-\text{3.159770887606328$\grave{ }$*${}^{\wedge}$-6}-0.0000117902 i\)
+
+\noindent\(\text{6.910306966300902$\grave{ }$*${}^{\wedge}$-12}-\text{1.7490811452186908$\grave{ }$*${}^{\wedge}$-12} i\)
+
+\noindent\(7\)
+
+\noindent\(0.000117781\, +0.000128907 i\)
+
+\noindent\(0.000117781\, +0.000128907 i\)
+
+\noindent\(-\text{1.335203583845623$\grave{ }$*${}^{\wedge}$-10}-\text{7.960616429827753$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(8\)
+
+\noindent\(-\text{3.3783526986906786$\grave{ }$*${}^{\wedge}$-9}-\text{7.871118971765524$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\noindent\(\text{2.86102294921875$\grave{ }$*${}^{\wedge}$-6}+\text{4.649162292480469$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(-\text{2.864401301917441$\grave{ }$*${}^{\wedge}$-6}-\text{4.727873482198124$\grave{ }$*${}^{\wedge}$-6} i\)
+
+\noindent\(9\)
+
+\noindent\(-0.014732-0.0164633 i\)
+
+\noindent\(-0.014732-0.0164633 i\)
+
+\noindent\(-\text{4.718447854656915$\grave{ }$*${}^{\wedge}$-16}-\text{1.1275702593849246$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(10\)
+
+\noindent\(0.0140342\, -0.00126071 i\)
+
+\noindent\(0.0140342\, -0.00126071 i\)
+
+\noindent\(-\text{6.938893903907228$\grave{ }$*${}^{\wedge}$-17}+\text{4.2717565595928875$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\section*{Numerical Confirmation of Corollary 4.3.1}
+
+\subsection*{Defining LHS annd RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHSC43}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}N\left[\frac{\text{Gamma}[\rho -\nu +\mu ](-z)^{\rho -\nu }}{\text{Gamma}[\rho
+-\nu +1]\text{Gamma}[\mu ]}\right.}\\
+\pmb{\left(\text{Log}\left[\frac{1}{z}\right]\text{Hypergeometric2F1}[\rho ,\rho -\nu +\mu ,\rho -\nu +1,z]+\right.}\\
+\pmb{\text{PolyGamma}[\rho -\nu +1]*}\\
+\pmb{\text{Hypergeometric2F1}[\rho -\nu +\mu ,\rho ,\rho -\nu +1,z]-}\\
+\pmb{\text{PolyGamma}[\rho -\nu +\mu ]\text{Hypergeometric2F1}[\rho -\nu +\mu ,}\\
+\pmb{\rho ,\rho -\nu +1,z])-}\\
+\pmb{\text{Sum}\left[\text{Binomial}[\rho -1,k]\frac{\text{Pochhammer}[k-\mu -\rho +2,\rho -1-k]}{\text{Gamma}[\rho ]}\right.}\\
+\pmb{(1-z)^{k-\mu -\rho +1}\left(\frac{1}{z}\right)^{k-\rho +1}}\\
+\pmb{\left(\text{Sum}\left[\text{Binomial}[k,l]\text{Pochhammer}[\nu -k+l,k-l]\frac{\text{Gamma}[l]}{(-1)^{k-l-\nu }},\right.\right.}\\
+\pmb{\{l,1,k\}]),\{k,0,\rho -1\}]-}\\
+\pmb{\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],100]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHSC43}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\frac{\text{Gamma}[\rho -\nu +\mu ](-z)^{\rho -\nu }}{\text{Gamma}[\rho -\nu +1]\text{Gamma}[\mu ]}\right.}\\
+\pmb{(-\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{\rho -\nu +1, \rho -\nu +\mu ,\rho \},\{\rho -\nu +1,\rho -\nu +1\},z]+}\\
+\pmb{\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \rho -\nu +\mu ,\rho \},\{\rho -\nu +1\},z]),100]}\)
+\end{doublespace}
+
+\subsection*{Randomize Parameter}
+
+\begin{doublespace}
+\noindent\(\pmb{q=\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomComplex}[\{0+I,10+10I\},\{20\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{20\}]}\\
+\pmb{r=e+1}\\\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{9.47928\, +5.19503 i,0.686957\, -2.89147 i,-1.99856-1.46128 i,3.24361\, -7.58968 i,-7.68396-5.28095 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0.0918869\, +9.4154 i,5.42825\, +7.15308 i,9.38044\, +3.58731 i,4.28626\, +3.04908 i,0.28324\, +2.12367 i,6.63892\, +3.41963 i,2.38372\,
++6.12281 i,1.47744\, +7.17551 i,0.362529\, +5.68814 i,4.84667\, +9.97213 i,3.13973\, +4.35672 i,6.51964\, +2.62759 i,4.80683\, +3.63196 i,9.66643\,
++9.84036 i,5.7587\, +1.24249 i,5.16986\, +4.52897 i,1.59406\, +6.87173 i,2.70277\, +4.68657 i,4.67968\, +9.68282 i,9.42067\, +3.5055 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{9,4,18,15,10,11,15,11,19,9,14,20,1,9,7,9,7,11,16,19\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{10,5,19,16,11,12,16,12,20,10,15,21,2,10,8,10,8,12,17,20\}\)
+\end{doublespace}
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(
+\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHSC43}[q[[i]],w[[i]],r[[i]],e[[i]]]];}
+\pmb{\text{Print}[\text{RHSC43}[q[[i]],w[[i]],r[[i]],e[[i]]]];}\\
+\pmb{\text{Print}[\text{LHSC43}[q[[i]],w[[i]],r[[i]],e[[i]]]-}
+\pmb{\text{RHSC43}[q[[i]],w[[i]],r[[i]],e[[i]]]]]}\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(-\text{2.7240832063226286$\grave{ }$*${}^{\wedge}$-7}-\text{5.053883232644659$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(-\text{2.7240832063226624$\grave{ }$*${}^{\wedge}$-7}-\text{5.053883232644633$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(\text{3.3881317890172014$\grave{ }$*${}^{\wedge}$-21}-\text{2.541098841762901$\grave{ }$*${}^{\wedge}$-21} i\)
+
+\noindent\(2\)
+
+\noindent\(-89236.9+44325.4 i\)
+
+\noindent\(-89236.9+44325.4 i\)
+
+\noindent\(-\text{2.473825588822365$\grave{ }$*${}^{\wedge}$-10}-\text{2.764863893389702$\grave{ }$*${}^{\wedge}$-10} i\)
+
+\noindent\(3\)
+
+\noindent\(-0.000312035-0.0000629034 i\)
+
+\noindent\(-0.000312035-0.0000629034 i\)
+
+\noindent\(-\text{8.992016116080026$\grave{ }$*${}^{\wedge}$-13}+\text{5.5191332596791695$\grave{ }$*${}^{\wedge}$-12} i\)
+
+\noindent\(4\)
+
+\noindent\(0.00804062\, -0.00443067 i\)
+
+\noindent\(0.00804062\, -0.00443067 i\)
+
+\noindent\(\text{8.03168278412647$\grave{ }$*${}^{\wedge}$-11}-\text{1.0888115062335224$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(5\)
+
+\noindent\(2.42801\, +5.90225 i\)
+
+\noindent\(2.42801\, +5.90225 i\)
+
+\noindent\(-\text{2.1893598045608087$\grave{ }$*${}^{\wedge}$-13}-\text{9.681144774731365$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(6\)
+
+\noindent\(0.00036841\, -0.00210425 i\)
+
+\noindent\(0.00036841\, -0.00210425 i\)
+
+\noindent\(-\text{1.644008280204945$\grave{ }$*${}^{\wedge}$-14}-\text{1.584756631478612$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(7\)
+
+\noindent\(2615.31\, -2307.3 i\)
+
+\noindent\(2615.31\, -2307.3 i\)
+
+\noindent\(\text{2.864908310584724$\grave{ }$*${}^{\wedge}$-11}+\text{7.366907084360719$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(8\)
+
+\noindent\(1.28648\times 10^7-3.27701\times 10^8 i\)
+
+\noindent\(1.28648\times 10^7-3.27701\times 10^8 i\)
+
+\noindent\(\text{7.171183824539185$\grave{ }$*${}^{\wedge}$-7}-\text{5.364418029785156$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(9\)
+
+\noindent\(630456.\, +179049. i\)
+
+\noindent\(630456.\, +179049. i\)
+
+\noindent\(-\text{1.1641532182693481$\grave{ }$*${}^{\wedge}$-9}-\text{6.693881005048752$\grave{ }$*${}^{\wedge}$-10} i\)
+
+\noindent\(10\)
+
+\noindent\(-11003.8+30463.8 i\)
+
+\noindent\(-11003.8+30463.8 i\)
+
+\noindent\(\text{1.0368239600211382$\grave{ }$*${}^{\wedge}$-10}-\text{7.639755494892597$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\section*{Numerical Confirmation of Theorem 4.4}
+
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHST44}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}\right.}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],100]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHST44}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\frac{\text{Gamma}[\nu -\rho ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu ]z^{\nu -\rho }}\right.}\\
+\pmb{\text{Sum}\left[z^k\frac{\text{Pochhammer}[\rho ,k]\text{Pochhammer}[\mu -\nu +\rho ,k]}{k!\text{Pochhammer}[1-\nu +\rho ,k]},\right.}\\
+\pmb{\{k,0,\nu -\rho -1\}]-}\\
+\pmb{\left(\frac{\text{Gamma}[\nu ](-1)^{\rho -\nu }}{\text{Gamma}[\rho ]\text{Gamma}[\nu -\rho +1]}\right)}\\
+\pmb{(\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z]}\\
+\pmb{(\text{Log}[z]-\text{PolyGamma}[\nu -\rho +1]+\text{PolyGamma}[\nu ]+}\\
+\pmb{\text{PolyGamma}[\mu ]-\text{PolyGamma}[1])-}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{\nu -\rho +1, \mu ,\nu \},\{\nu -\rho +1,\nu -\rho +1\},z]+}\\
+\pmb{\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \mu ,\nu \},\{\nu -\rho +1\},z]+}\\
+\pmb{\text{Derivative}[\{0,1\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \mu ,\nu \},\{\nu -\rho +11\},z]-}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ 1,\mu ,\nu \},\{1,\nu -\rho +1\},z]),100]}\)
+\end{doublespace}
+
+\subsection*{Randomize Parameter}
+
+\begin{doublespace}
+\noindent\(\pmb{q=\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomComplex}[\{2+I,10+10I\},\{10\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{10\}]}\\
+\pmb{r=e+1}\\
+\pmb{t =\text{RandomReal}[\{0,1\},\{10\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0.545051\, +6.67855 i,-5.28274+0.453701 i,2.23458\, -2.91297 i,1.87684\, +2.50766 i,-4.52127-4.2262 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{2.82317\, +3.92522 i,5.0398\, +9.91321 i,3.35185\, +3.94868 i,6.97441\, +4.15823 i,2.26925\, +3.92895 i,5.8934\, +7.79761 i,9.17084\,
++8.03747 i,3.82964\, +2.70928 i,2.70145\, +4.15854 i,8.56566\, +3.76023 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{14,1,16,6,5,5,19,3,6,9\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{15,2,17,7,6,6,20,4,7,10\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0.612754,0.294122,0.99696,0.402385,0.670791,0.000735692,0.0494942,0.134812,0.403285,0.597242\}\)
+\end{doublespace}
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(
+\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHST44}[q[[i]],w[[i]],e[[i]]+t[[i]],}
+\pmb{r[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{RHST44}[q[[i]],w[[i]],e[[i]]+t[[i]],}
+\pmb{r[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{LHST44}[q[[i]],w[[i]],e[[i]]+t[[i]],}
+\pmb{r[[i]]+t[[i]]]-}\\
+\pmb{\text{RHST44}[q[[i]],w[[i]],e[[i]]+t[[i]],r[[i]]+t[[i]]]]]}\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(0.000207248\, +0.0000847909 i\)
+
+\noindent\(0.000207248\, +0.0000847909 i\)
+
+\noindent\(-\text{8.245357521752261$\grave{ }$*${}^{\wedge}$-17}-\text{1.0177947894207673$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(2\)
+
+\noindent\(-0.000345623+0.000610825 i\)
+
+\noindent\(-0.000345623+0.000610825 i\)
+
+\noindent\(\text{1.0299920638612292$\grave{ }$*${}^{\wedge}$-17}-\text{4.87890977618477$\grave{ }$*${}^{\wedge}$-18} i\)
+
+\noindent\(3\)
+
+\noindent\(-\text{2.6369451947178825$\grave{ }$*${}^{\wedge}$-8}-\text{2.4510834423732497$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\noindent\(-\text{2.638589587100615$\grave{ }$*${}^{\wedge}$-8}-\text{2.4519693667818254$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\noindent\(\text{1.6443923827323837$\grave{ }$*${}^{\wedge}$-11}+\text{8.859244085757135$\grave{ }$*${}^{\wedge}$-12} i\)
+
+\noindent\(4\)
+
+\noindent\(-\text{1.4884326245745886$\grave{ }$*${}^{\wedge}$-6}-\text{8.182268127816637$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\noindent\(-\text{1.4884326245516444$\grave{ }$*${}^{\wedge}$-6}-\text{8.182268128320569$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\noindent\(-\text{2.2944216716987674$\grave{ }$*${}^{\wedge}$-17}+\text{5.039316640571053$\grave{ }$*${}^{\wedge}$-18} i\)
+
+\noindent\(5\)
+
+\noindent\(-\text{3.58473995889897$\grave{ }$*${}^{\wedge}$-8}-\text{7.860914313118731$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(-\text{3.5847389636550764$\grave{ }$*${}^{\wedge}$-8}-\text{7.860830833483767$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(-\text{9.952438937763261$\grave{ }$*${}^{\wedge}$-15}-\text{8.347963496401344$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(6\)
+
+\noindent\(0.000151894\, +0.00212026 i\)
+
+\noindent\(0.000151894\, +0.00212026 i\)
+
+\noindent\(-\text{6.433194634555134$\grave{ }$*${}^{\wedge}$-12}-\text{7.33440651962125$\grave{ }$*${}^{\wedge}$-12} i\)
+
+\noindent\(7\)
+
+\noindent\(\text{7.219722807280551$\grave{ }$*${}^{\wedge}$-10}+\text{2.266231568425487$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(-2.73094\times 10^6-468160. i\)
+
+\noindent\(2.73094\times 10^6+468160. i\)
+
+\noindent\(8\)
+
+\noindent\(-0.745796-0.341097 i\)
+
+\noindent\(-0.745796-0.341097 i\)
+
+\noindent\(\text{1.6653345369377348$\grave{ }$*${}^{\wedge}$-15}-\text{5.551115123125783$\grave{ }$*${}^{\wedge}$-16} i\)
+
+\noindent\(9\)
+
+\noindent\(-0.0204164-0.073853 i\)
+
+\noindent\(-0.0204164-0.073853 i\)
+
+\noindent\(-\text{1.3888196148670318$\grave{ }$*${}^{\wedge}$-14}-\text{1.4432899320127035$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(10\)
+
+\noindent\(0.0000222785\, +0.0000760809 i\)
+
+\noindent\(0.0000222871\, +0.0000760926 i\)
+
+\noindent\(-\text{8.62400895941057$\grave{ }$*${}^{\wedge}$-9}-\text{1.1705050975159949$\grave{ }$*${}^{\wedge}$-8} i\)
+
+\section*{Numerical Confirmation of Corollary 4.4.1}
+
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHSC44}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\left(\frac{\text{Gamma}[\nu ](-1)^{\rho -\nu }}{\text{Gamma}[\rho ]\text{Gamma}[\nu -\rho +1]}\right)\right.}\\
+\pmb{(-\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{\nu -\rho +1, \mu ,\nu \},\{\nu -\rho +1,\nu -\rho +1\},z]+}\\
+\pmb{\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \mu ,\nu \},\{\nu -\rho +1\},z]+}\\
+\pmb{\text{Derivative}[\{0,1\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \mu ,\nu \},\{\nu -\rho +11\},z]-}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ 1,\mu ,\nu \},\{1,\nu -\rho +1\},z]),100]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHSC44}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\frac{\text{Gamma}[\nu -\rho ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu ]z^{\nu -\rho }}\right.}\\
+\pmb{\text{Sum}\left[z^k\frac{\text{Pochhammer}[\rho ,k]\text{Pochhammer}[\mu -\nu +\rho ,k]}{k!\text{Pochhammer}[1-\nu +\rho ,k]},\right.}\\
+\pmb{\{k,0,\nu -\rho -1\}]-}\\
+\pmb{\left(\frac{\text{Gamma}[\nu ](-1)^{\rho -\nu }}{\text{Gamma}[\rho ]\text{Gamma}[\nu -\rho +1]}\right)}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\nu -\rho +1,z]}\\
+\pmb{(\text{Log}[z]-\text{PolyGamma}[\nu -\rho +1]+\text{PolyGamma}[\nu ]+}\\
+\pmb{\text{PolyGamma}[\mu ]-\text{PolyGamma}[1])-}\\
+\pmb{\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],100]}\)
+\end{doublespace}
+
+\subsection*{Randomize Parameters}
+
+\begin{doublespace}
+\noindent\(\pmb{q=\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomComplex}[\{1+I,10+10I\},\{10\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{10\}]}\\
+\pmb{r=e+1}\\
+\pmb{t =\text{RandomReal}[\{0,1\},\{10\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{-6.00245-1.72368 i,-0.107309+8.86091 i,-1.70751+1.39973 i,1.81074\, -1.8981 i,-8.57637-7.29633 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{5.82151\, +3.88514 i,4.07061\, +6.11829 i,7.28563\, +9.79124 i,8.54319\, +7.24154 i,4.30113\, +4.78279 i,9.80833\, +9.84802 i,1.07292\,
++4.95258 i,6.96176\, +5.60287 i,2.30559\, +3.17365 i,8.27658\, +6.65423 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{4,6,16,6,15,15,15,4,3,12\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{5,7,17,7,16,16,16,5,4,13\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0.749634,0.646114,0.749762,0.415768,0.439991,0.983963,0.5721,0.584222,0.0309153,0.48522\}\)
+\end{doublespace}
+
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHSC44}[q[[i]],w[[i]],e[[i]]+t[[i]],}
+\pmb{r[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{RHSC44}[q[[i]],w[[i]],e[[i]]+t[[i]],}
+\pmb{r[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{LHSC44}[q[[i]],w[[i]],e[[i]]+t[[i]],}
+\pmb{r[[i]]+t[[i]]]-}\\
+\pmb{\text{RHSC44}[q[[i]],w[[i]],e[[i]]+t[[i]],r[[i]]+t[[i]]]]]}\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(-0.0161036+0.0226143 i\)
+
+\noindent\(-0.0161036+0.0226143 i\)
+
+\noindent\(\text{1.0408340855860843$\grave{ }$*${}^{\wedge}$-17}-\text{3.122502256758253$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(2\)
+
+\noindent\(-0.0148235-0.00720897 i\)
+
+\noindent\(-0.0148235-0.00720897 i\)
+
+\noindent\(-\text{2.7755575615628914$\grave{ }$*${}^{\wedge}$-17}-\text{1.214306433183765$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(3\)
+
+\noindent\(-0.0363264+0.0102568 i\)
+
+\noindent\(-0.0363264+0.0102568 i\)
+
+\noindent\(\text{4.163336342344337$\grave{ }$*${}^{\wedge}$-17}+\text{1.8041124150158794$\grave{ }$*${}^{\wedge}$-16} i\)
+
+\noindent\(4\)
+
+\noindent\(9.02303\times 10^7-6.33462\times 10^7 i\)
+
+\noindent\(9.02303\times 10^7-6.33462\times 10^7 i\)
+
+\noindent\(-\text{2.5331974029541016$\grave{ }$*${}^{\wedge}$-7}-\text{8.046627044677734$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(5\)
+
+\noindent\(-0.0255295+0.0338769 i\)
+
+\noindent\(-0.0270673+0.0186727 i\)
+
+\noindent\(0.00153785\, +0.0152042 i\)
+
+\noindent\(6\)
+
+\noindent\(2.46854\times 10^6-1.27212\times 10^6 i\)
+
+\noindent\(2.46854\times 10^6-1.27212\times 10^6 i\)
+
+\noindent\(0.294207\, +0.153209 i\)
+
+\noindent\(7\)
+
+\noindent\(7.29023\times 10^8+2.95529\times 10^8 i\)
+
+\noindent\(7.29023\times 10^8+2.95529\times 10^8 i\)
+
+\noindent\(-0.00663173-0.110973 i\)
+
+\noindent\(8\)
+
+\noindent\(4.51688\, +1.99765 i\)
+
+\noindent\(4.51688\, +1.99765 i\)
+
+\noindent\(\text{3.156817030003367$\grave{ }$*${}^{\wedge}$-10}+\text{7.854428218934117$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\noindent\(9\)
+
+\noindent\(-0.47087+0.887466 i\)
+
+\noindent\(-0.47087+0.887466 i\)
+
+\noindent\(-\text{3.9968028886505635$\grave{ }$*${}^{\wedge}$-15}-\text{1.1102230246251565$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(10\)
+
+\noindent\(-35364.2-34136.4 i\)
+
+\noindent\(-35364.2-34136.4 i\)
+
+\noindent\(-\text{1.3096723705530167$\grave{ }$*${}^{\wedge}$-10}-\text{2.1827872842550278$\grave{ }$*${}^{\wedge}$-11} i\)
+
+\section*{Numerical Confirmation of Theorem 4.5}
+
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHST45}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}\right.}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],100]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHST45}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N[}\\
+\pmb{(\text{Gamma}[\nu ]/\text{Gamma}[\rho ])}\\
+\pmb{\text{Sum}[}\\
+\pmb{(-z)^k}\\
+\pmb{((\text{Pochhammer}[\mu ,k]\text{Pochhammer}[\nu ,k](\rho -\nu -k-1)!)/}\\
+\pmb{k!),\{k,0,\rho -\nu -1\}]-}\\
+\pmb{\left(\left.\left(\text{Gamma}[\rho -\nu +\mu ](-z)^{\rho -\nu }\right)\right/(\text{Gamma}[\mu ]\text{Gamma}[\rho -\nu +1])\right)}\\
+\pmb{(\text{Hypergeometric2F1}[\rho ,\mu +\rho -\nu ,\rho -\nu +1,z]}\\
+\pmb{(\text{Log}[z]-\text{PolyGamma}[\rho -\nu +1]+\text{PolyGamma}[\rho -\nu +\mu ]+}\\
+\pmb{\text{PolyGamma}[\rho ]-\text{PolyGamma}[1])-}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{\rho -\nu +1, \rho -\nu +\mu ,\rho \},\{\rho -\nu +1,\rho -\nu +1\},z]+}\\
+\pmb{\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \rho -\nu +\mu ,\rho \},\{\rho -\nu +1\},z]+}\\
+\pmb{\text{Derivative}[\{0,1\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \rho -\nu +\mu ,\rho \},\{\rho -\nu +1\},z]-}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ 1,\rho -\nu +\mu ,\rho \},\{1,\rho -\nu +1\},z]),100]}\)
+\end{doublespace}
+
+\subsection*{Randomize Parameter}
+
+\begin{doublespace}
+\noindent\(\pmb{q\text{:=}\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=0,i<5,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomComplex}[\{2+I,10+10I\},\{10\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{10\}]}\\
+\pmb{r=e+1}\\
+\pmb{t =\text{RandomReal}[\{0,1\},\{10\}]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{3.85516\, +3.46587 i,4.16785\, +4.59722 i,8.84827\, +6.00625 i,8.36586\, +3.49782 i,7.94295\, +9.92698 i,6.01397\, +7.45465 i,9.95553\,
++8.91851 i,2.42314\, +6.02969 i,7.47744\, +5.35324 i,7.07754\, +6.613 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{13,8,5,11,5,3,15,4,2,3\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{14,9,6,12,6,4,16,5,3,4\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0.805924,0.469198,0.900007,0.721215,0.860897,0.126469,0.453057,\\0.823011,0.0960685,0.899094\}\)
+\end{doublespace}
+
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(\pmb{q\text{:=}\text{RandomComplex}[\{-10-10I,10+10I\},\{5\}]}\\
+\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHST45}[q[[i]],w[[i]],r[[i]]+t[[i]],}
+\pmb{e[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{RHST45}[q[[i]],w[[i]],r[[i]]+t[[i]],}
+\pmb{e[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{LHST45}[q[[i]],w[[i]],r[[i]]+t[[i]],}
+\pmb{e[[i]]+t[[i]]]-}\\
+\pmb{\text{RHST45}[q[[i]],w[[i]],r[[i]]+t[[i]],e[[i]]+t[[i]]]]]}\)
+\end{doublespace}
+
+\noindent\(1\)
+
+\noindent\(0.0000163537\, -0.0000523029 i\)
+
+\noindent\(0.0000163537\, -0.0000523029 i\)
+
+\noindent\(\text{2.881267273380228$\grave{ }$*${}^{\wedge}$-17}-\text{2.2768245622195593$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(2\)
+
+\noindent\(\text{8.625383479161536$\grave{ }$*${}^{\wedge}$-8}-\text{3.438944900689072$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(\text{8.625383497717909$\grave{ }$*${}^{\wedge}$-8}-\text{3.438944900374663$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(-\text{1.8556372968484605$\grave{ }$*${}^{\wedge}$-16}-\text{3.144091009001397$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(3\)
+
+\noindent\(-\text{3.1183550029619146$\grave{ }$*${}^{\wedge}$-9}+\text{5.237555680869423$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(-\text{3.118354768849585$\grave{ }$*${}^{\wedge}$-9}+\text{5.237555708581532$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\noindent\(-\text{2.3411232964667763$\grave{ }$*${}^{\wedge}$-16}-\text{2.7712108928800477$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(4\)
+
+\noindent\(-\text{3.8148845639366966$\grave{ }$*${}^{\wedge}$-13}+\text{1.8334703399141178$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(-\text{3.8143099789778034$\grave{ }$*${}^{\wedge}$-13}+\text{1.835337437583462$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(-\text{5.745849588931704$\grave{ }$*${}^{\wedge}$-17}-\text{1.8670976693441185$\grave{ }$*${}^{\wedge}$-17} i\)
+
+\noindent\(5\)
+
+\noindent\(-\text{1.4471790948245663$\grave{ }$*${}^{\wedge}$-6}+\text{6.10529499516449$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(-\text{1.4471790948100693$\grave{ }$*${}^{\wedge}$-6}+\text{6.105294997338362$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(-\text{1.449696889225735$\grave{ }$*${}^{\wedge}$-17}-\text{2.1738719426455354$\grave{ }$*${}^{\wedge}$-16} i\)
+
+\noindent\(6\)
+
+\noindent\(-0.000644014+0.000984836 i\)
+
+\noindent\(-0.000644014+0.000984836 i\)
+
+\noindent\(\text{5.226657865189943$\grave{ }$*${}^{\wedge}$-13}+\text{3.6824406371427365$\grave{ }$*${}^{\wedge}$-13} i\)
+
+\noindent\(7\)
+
+\noindent\(\text{3.6226679306044384$\grave{ }$*${}^{\wedge}$-8}+\text{5.01415813153924$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(\text{3.6227096045227114$\grave{ }$*${}^{\wedge}$-8}+\text{5.014168576525369$\grave{ }$*${}^{\wedge}$-7} i\)
+
+\noindent\(-\text{4.1673918273049965$\grave{ }$*${}^{\wedge}$-13}-\text{1.0444986128019991$\grave{ }$*${}^{\wedge}$-12} i\)
+
+\noindent\(8\)
+
+\noindent\(-1.46655-4.61308 i\)
+
+\noindent\(-1.46655-4.61308 i\)
+
+\noindent\(\text{8.43769498715119$\grave{ }$*${}^{\wedge}$-15}+\text{4.440892098500626$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(9\)
+
+\noindent\(0.155435\, +0.33139 i\)
+
+\noindent\(0.155435\, +0.33139 i\)
+
+\noindent\(\text{1.1102230246251565$\grave{ }$*${}^{\wedge}$-15}-\text{1.27675647831893$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(10\)
+
+\noindent\(0.000143975\, +0.000249162 i\)
+
+\noindent\(0.000143976\, +0.000249161 i\)
+
+\noindent\(-\text{6.269026701563856$\grave{ }$*${}^{\wedge}$-10}+\text{1.6748438850535362$\grave{ }$*${}^{\wedge}$-9} i\)
+
+\section*{Numerical Confirmation of Corollary 4.5.1}
+
+\subsection*{Defining LHS and RHS}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{LHSC45}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}\\
+\pmb{N\left[\left(\frac{\text{Gamma}[\rho -\nu +\mu ](-z)^{\rho -\nu }}{\text{Gamma}[\mu ]\text{Gamma}[\rho -\nu +1]}\right)\right.}\\
+\pmb{(-\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{\rho -\nu +1, \rho -\nu +\mu ,\rho \},\{\rho -\nu +1,\rho -\nu +1\},z]+}\\
+\pmb{\text{Derivative}[\{1,0\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \rho -\nu +\mu ,\rho \},\{\rho -\nu +1\},z]+}\\
+\pmb{\text{Derivative}[\{0,1\},\{0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ \rho -\nu +\mu ,\rho \},\{\rho -\nu +1\},z]-}\\
+\pmb{\text{Derivative}[\{1,0,0\},\{0,0\},0][\text{HypergeometricPFQ}][}\\
+\pmb{\{ 1,\rho -\nu +\mu ,\rho \},\{1,\rho -\nu +1\},z]),100]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\pmb{\text{RHSC45}[\text{z$\_$},\mu \_,\rho \_,\nu \_]\text{:=}}
+\pmb{N[}
+\pmb{\frac{\text{Gamma}[\nu ]}{\text{Gamma}[\rho ]}}
+\pmb{\text{Sum}[}\\
+\pmb{(-z)^k\frac{\text{Pochhammer}[\mu ,k]\text{Pochhammer}[\nu ,k](\rho -\nu -k-1)!}{k!},}
+\pmb{\{k,0,\rho -\nu -1\}]-}\\
+\pmb{\frac{\text{Gamma}[\rho -\nu +\mu ](-z)^{\rho -\nu }}{\text{Gamma}[\mu ]\text{Gamma}[\rho -\nu +1]}}\\
+\pmb{\text{Hypergeometric2F1}[\rho ,\mu +\rho -\nu ,\rho -\nu +1,z]}\\
+\pmb{(\text{Log}[z]-\text{PolyGamma}[\rho -\nu +1]+\text{PolyGamma}[\rho -\nu +\mu ]+}\\
+\pmb{\text{PolyGamma}[\rho ]-\text{PolyGamma}[1])-}\\
+\pmb{\frac{\text{Gamma}[\nu ]\text{Gamma}[\mu -\nu +\rho ]}{\text{Gamma}[\mu +\rho ]}}\\
+\pmb{\text{Hypergeometric2F1}[\mu ,\nu ,\mu +\rho ,1-z],100]}\)
+\end{doublespace}
+
+\subsection*{Randomize Parameter}
+
+\begin{doublespace}
+\noindent\(\pmb{q=\text{RandomComplex}[\{-10-10I,10+10I\},\{10\}]}\\
+\pmb{\text{For}[i=0,i<10,i\text{++},}\\
+\pmb{\text{AppendTo}[q,\text{RandomComplex}[\{-1-I,1+I\}]]]}\\
+\pmb{w=\text{RandomComplex}[\{1+I,10+10I\},\{20\}]}\\
+\pmb{e=\text{RandomInteger}[\{1,20\},\{20\}]}\\
+\pmb{r=e+2}\\
+\pmb{t =\text{RandomReal}[\{0,1\},\{20\}]}\\
+\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],}\\
+\pmb{e[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{RHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],}\\
+\pmb{e[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{LHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],}\\
+\pmb{e[[i]]+t[[i]]]-}\\
+\pmb{\text{RHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],e[[i]]+t[[i]]]]]}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0.335952\, -7.93724 i,-1.27666+8.96513 i,1.05881\, +9.4911 i,-7.50095+2.39447 i,-5.25615+9.81576 i,-8.11717-0.258378 i,4.55917\, -6.44586
+i,-0.504733-8.94666 i,4.56525\, -7.60908 i,-8.53116-5.86885 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{9.88702\, +3.78808 i,7.96045\, +3.2518 i,2.44188\, +6.91503 i,2.46142\, +7.13687 i,8.01463\, +3.86633 i,1.47179\, +7.16746 i,9.61946\,
++1.4339 i,7.65682\, +4.38375 i,1.2873\, +4.12083 i,1.98507\, +6.549 i,3.04783\, +2.96893 i,9.31649\, +7.75112 i,3.83066\, +6.39103 i,4.02114\, +3.07298
+i,2.80643\, +6.21211 i,1.55042\, +2.5711 i,4.89608\, +1.81131 i,2.23053\, +7.64954 i,4.07038\, +8.72807 i,9.96726\, +8.91302 i\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{12,1,11,1,2,14,18,2,3,16,3,2,4,1,2,8,16,7,6,11\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{14,3,13,3,4,16,20,4,5,18,5,4,6,3,4,10,18,9,8,13\}\)
+\end{doublespace}
+
+\begin{doublespace}
+\noindent\(\{0.0695184,0.793521,0.387608,0.504799,0.477064,0.776245,0.491445,0.898059,0.225633,0.0853489,0.995005,0.699694,0.753035,0.235047,0.0636988,0.848211,0.391736,0.797747,0.0630325,0.451208\}\)
+\end{doublespace}
+
+
+\subsection*{Numerical Confirmation}
+
+The LHS and RHS is evaluated with random parameter stored in a list. Also, the difference of the two is obtained. It was found out that increasing the machine precision also increases the accuracy of the result.
+
+\begin{doublespace}
+\noindent\(
+\pmb{\text{For}[i=1,i<11,i\text{++},\text{Print}[i];}\\
+\pmb{\text{Print}[\text{LHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],}
+\pmb{e[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{RHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],}
+\pmb{e[[i]]+t[[i]]]];}\\
+\pmb{\text{Print}[\text{LHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],}
+\pmb{e[[i]]+t[[i]]]-}\\
+\pmb{\text{RHSC45}[q[[i]],w[[i]],r[[i]]+t[[i]],e[[i]]+t[[i]]]]]}\)
+\end{doublespace}
+
+
+\noindent\(1\)
+
+\noindent\(-2.54847+5.90731 i\)
+
+\noindent\(-2.54847+5.90731 i\)
+
+\noindent\(\text{1.7763568394002505$\grave{ }$*${}^{\wedge}$-15}-\text{9.769962616701378$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(2\)
+
+\noindent\(14.2735\, -24.0609 i\)
+
+\noindent\(14.2735\, -24.0609 i\)
+
+\noindent\(-\text{1.2434497875801753$\grave{ }$*${}^{\wedge}$-14}+\text{1.0658141036401503$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(3\)
+
+\noindent\(5.09654\, -2.46198 i\)
+
+\noindent\(5.09654\, -2.46198 i\)
+
+\noindent\(\text{8.881784197001252$\grave{ }$*${}^{\wedge}$-16}-\text{1.2878587085651816$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(4\)
+
+\noindent\(14.4336\, +19.145 i\)
+
+\noindent\(14.4336\, +19.145 i\)
+
+\noindent\(-\text{1.0658141036401503$\grave{ }$*${}^{\wedge}$-14}+\text{3.552713678800501$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(5\)
+
+\noindent\(23.1462\, -16.7808 i\)
+
+\noindent\(23.1462\, -16.7808 i\)
+
+\noindent\(-\text{4.973799150320701$\grave{ }$*${}^{\wedge}$-14}+\text{2.4868995751603507$\grave{ }$*${}^{\wedge}$-14} i\)
+
+\noindent\(6\)
+
+\noindent\(-26.0189+31.9305 i\)
+
+\noindent\(-26.6587+28.2186 i\)
+
+\noindent\(0.639877\, +3.71189 i\)
+
+\noindent\(7\)
+
+\noindent\(-2.72147+2.84578 i\)
+
+\noindent\(-2.72147+2.84578 i\)
+
+\noindent\(0.\, +\text{2.220446049250313$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(8\)
+
+\noindent\(-8.98993+18.1177 i\)
+
+\noindent\(-8.98993+18.1177 i\)
+
+\noindent\(\text{3.552713678800501$\grave{ }$*${}^{\wedge}$-14}-\text{3.552713678800501$\grave{ }$*${}^{\wedge}$-15} i\)
+
+\noindent\(9\)
+
+\noindent\(-24539.1-12819.3 i\)
+
+\noindent\(-24539.1-12819.3 i\)
+
+\noindent\(-\text{1.3096723705530167$\grave{ }$*${}^{\wedge}$-10}-\text{1.3278622645884752$\grave{ }$*${}^{\wedge}$-10} i\)
+
+\noindent\(10\)
+
+\noindent\(101.895\, +24.3082 i\)
+
+\noindent\(101.895\, +24.3082 i\)
+
+\noindent\(-\text{6.963318810448982$\grave{ }$*${}^{\wedge}$-13}-\text{7.460698725481052$\grave{ }$*${}^{\wedge}$-14} i\)

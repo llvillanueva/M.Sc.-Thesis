@@ -1,0 +1,418 @@
+\begin{thebibliography}{66}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bateman(1953)]{bateman1953higher}
+Harry Bateman.
+\newblock \emph{Higher transcendental functions [volumes i-iii]}, volume~1.
+\newblock McGraw-Hill Book Company, 1953.
+
+\bibitem[Nikiforov and Uvarov(1988)]{nikiforov1988special}
+Arnold~F Nikiforov and Vasili{\u\i}~Borisovich Uvarov.
+\newblock \emph{Special functions of mathematical physics}, volume 205.
+\newblock Springer, 1988.
+
+\bibitem[Abramowitz and Stegun(1964)]{abramowitz1964handbook}
+Milton Abramowitz and Irene~A Stegun.
+\newblock \emph{Handbook of mathematical functions with formulas, graphs, and
+  mathematical tables}, volume~55.
+\newblock US Government printing office, 1964.
+
+\bibitem[Gradshteyn and Ryzhik(2014)]{gradshteyn2014table}
+Izrail~Solomonovich Gradshteyn and Iosif~Moiseevich Ryzhik.
+\newblock \emph{Table of integrals, series, and products}.
+\newblock Academic press, 2014.
+
+\bibitem[Slater(1966)]{slater1966generalized}
+Lucy~Joan Slater.
+\newblock Generalized hypergeometric functions.
+\newblock 1966.
+
+\bibitem[Appell(1880)]{appell1880classe}
+Paul Appell.
+\newblock Sur une classe de polyn{\^o}mes.
+\newblock In \emph{Annales scientifiques de l'{\'E}cole normale
+  sup{\'e}rieure}, volume~9, pages 119--144, 1880.
+
+\bibitem[Horn(1931)]{horn1931hypergeometrische}
+Jakob Horn.
+\newblock Hypergeometrische funktionen zweier ver{\"a}nderlichen.
+\newblock \emph{Mathematische Annalen}, 105\penalty0 (1):\penalty0 381--407,
+  1931.
+
+\bibitem[Borngasser(1933)]{borngasser1933uber}
+Ludwig Borngasser.
+\newblock Uber hypergeometrische funktionen zweier veranderlichen., von ludwig
+  borngasser.
+\newblock 1933.
+
+\bibitem[Humbert(1922)]{humbert1922ix}
+Pierre Humbert.
+\newblock Ix.—the confluent hypergeometric functions of two variables.
+\newblock \emph{Proceedings of the Royal Society of Edinburgh}, 41:\penalty0
+  73--96, 1922.
+
+\bibitem[Appell and De~F{\'e}riet(1926)]{appell1926fonctions}
+Paul Appell and Joseph~Kamp{\'e} De~F{\'e}riet.
+\newblock \emph{Fonctions hyperg{\'e}om{\'e}triques et hypersph{\'e}riques:
+  polynomes d'Hermite}.
+\newblock Gauthier-Villars, 1926.
+
+\bibitem[Burchnall and Chaundy(1941)]{burchnall1941expansions}
+JL~Burchnall and TW~Chaundy.
+\newblock Expansions of appell's double hyper-geometric functions (ii).
+\newblock \emph{The Quarterly Journal of Mathematics}, \penalty0 (1):\penalty0
+  112--128, 1941.
+
+\bibitem[Srivastava and Panda(1976)]{srivastava1976integral}
+HM~Srivastava and Rekha Panda.
+\newblock An integral representation for the product of two jacobi polynomials.
+\newblock \emph{Journal of the London Mathematical Society}, 2\penalty0
+  (4):\penalty0 419--425, 1976.
+
+\bibitem[Alder et~al.(1956)Alder, Bohr, Huus, Mottelson, and
+  Winther]{alder1956study}
+Kurt Alder, Aage Bohr, Torben Huus, Ben Mottelson, and Aage Winther.
+\newblock Study of nuclear structure by electromagnetic excitation with
+  accelerated ions.
+\newblock \emph{Reviews of modern physics}, 28\penalty0 (4):\penalty0 432,
+  1956.
+
+\bibitem[Reynolds et~al.(1964)Reynolds, Onley, and
+  Biedenharn]{reynolds1964some}
+JT~Reynolds, DS~Onley, and LC~Biedenharn.
+\newblock Some exact radial integrals for dirac-coulomb functions.
+\newblock \emph{Journal of Mathematical Physics}, 5\penalty0 (3):\penalty0
+  411--419, 1964.
+
+\bibitem[Exton(1976)]{exton1976multiple}
+Harold Exton.
+\newblock Multiple hypergeometric functions and applications.
+\newblock 1976.
+
+\bibitem[Exton(1978)]{exton1978handbook}
+Harold Exton.
+\newblock Handbook of hypergeometric integrals: theory, applications, tables,
+  computer programs.
+\newblock 1978.
+
+\bibitem[Ancarani and Gasaneo(2010)]{ancarani2010derivatives}
+LU~Ancarani and Gustavo Gasaneo.
+\newblock Derivatives of any order of the hypergeometric function pfq (a1,…,
+  ap; b1,…, bq; z) with respect to the parameters ai and bi.
+\newblock \emph{Journal of Physics A: Mathematical and Theoretical},
+  43\penalty0 (8):\penalty0 085210, 2010.
+
+\bibitem[Cvijovi{\'c} and Miller(2010)]{cvijovic2010reduction}
+Djurdje Cvijovi{\'c} and Allen~R Miller.
+\newblock A reduction formula for the kamp{\'e} de f{\'e}riet function.
+\newblock \emph{Applied Mathematics Letters}, 23\penalty0 (7):\penalty0
+  769--771, 2010.
+
+\bibitem[Miller(2006)]{miller2006summations}
+Allen~R Miller.
+\newblock Summations for certain series containing the digamma function.
+\newblock \emph{Journal of Physics A: Mathematical and General}, 39\penalty0
+  (12):\penalty0 3011, 2006.
+
+\bibitem[Srivastava and Karlsson(1985)]{srivastava1985multiple}
+Hari~M Srivastava and Per~Wennerberg Karlsson.
+\newblock Multiple gaussian hypergeometric series, halsted press (ellis horwood
+  limited, chichester).
+\newblock 1985.
+
+\bibitem[Exton and Krupnikov(1998)]{exton1998register}
+H~Exton and ED~Krupnikov.
+\newblock A register of computer-oriented reduction identities for the
+  kamp{\'e} de f{\'e}riet function.
+\newblock \emph{Draft Manuscript, Novosibirsk Russia}, 1998.
+
+\bibitem[Villanueva and Galapon(2020)]{SPP-2020-2G-03}
+Lloyd~Llena Villanueva and Eric~A. Galapon.
+\newblock Kampé de fériet function reduction formula via finite-part
+  integration.
+\newblock In \emph{Proceedings of the Samahang Pisika ng Pilipinas}, volume~38,
+  pages SPP--2020--2G--03, 2020.
+
+\bibitem[Galapon(2017)]{galapon2017problem}
+Eric~A Galapon.
+\newblock The problem of missing terms in term by term integration involving
+  divergent integrals.
+\newblock \emph{Proceedings of the Royal Society A: Mathematical, Physical and
+  Engineering Sciences}, 473\penalty0 (2197):\penalty0 20160567, 2017.
+
+\bibitem[Saxena(1959)]{saxena1959study}
+RK~Saxena.
+\newblock A study of the generalized stieltjes transform.
+\newblock \emph{Lecturer in Mathematics, MB College, Udaipur}, 25:\penalty0
+  340--355, 1959.
+
+\bibitem[McClure and Wong(2016)]{mcclure2016explicit}
+JP~McClure and R~Wong.
+\newblock Explicit error terms for asymptotic expansions of stieltjes
+  transforms.
+\newblock In \emph{The Selected Works of Roderick SC Wong}, pages 85--101.
+  World Scientific, 2016.
+
+\bibitem[Pipkin(1991)]{pipkin1991course}
+Allen~C Pipkin.
+\newblock \emph{A course on integral equations}.
+\newblock Number~9. Springer Science \& Business Media, 1991.
+
+\bibitem[Hadamard(1923)]{hadamard1923lectures}
+Jacques Hadamard.
+\newblock \emph{Lectures on Cauchy's problem in linear partial differential
+  equations}, volume~37.
+\newblock Yale University Press, 1923.
+
+\bibitem[Galapon(2016)]{galapon2016cauchy}
+Eric~A Galapon.
+\newblock The cauchy principal value and the hadamard finite part integral as
+  values of absolutely convergent integrals.
+\newblock \emph{Journal of Mathematical Physics}, 57\penalty0 (3):\penalty0
+  033502, 2016.
+
+\bibitem[Leibbrandt(1975)]{RevModPhys.47.849}
+George Leibbrandt.
+\newblock Introduction to the technique of dimensional regularization.
+\newblock \emph{Rev. Mod. Phys.}, 47:\penalty0 849--876, Oct 1975.
+\newblock \doi{10.1103/RevModPhys.47.849}.
+\newblock URL \url{https://link.aps.org/doi/10.1103/RevModPhys.47.849}.
+
+\bibitem[Wong(2016)]{wong2016distributional}
+R~Wong.
+\newblock Distributional derivation of an asymptotic expansion.
+\newblock In \emph{The Selected Works of Roderick SC Wong}, pages 181--185.
+  World Scientific, 2016.
+
+\bibitem[Shiekh(1990)]{shiekh1990zeta}
+AY~Shiekh.
+\newblock Zeta-function regularization of quantum field theory.
+\newblock \emph{Canadian journal of physics}, 68\penalty0 (7-8):\penalty0
+  620--629, 1990.
+
+\bibitem[Laforgia(2009)]{laforgia2009theory}
+Andrea Laforgia.
+\newblock A theory of divergent integrals.
+\newblock \emph{Applied Mathematics Letters}, 22\penalty0 (6):\penalty0
+  834--840, 2009.
+
+\bibitem[Caianiello(1973)]{caianiello1973generalized}
+ER~Caianiello.
+\newblock Generalized integration procedure for divergent integrals.
+\newblock \emph{Il Nuovo Cimento A (1965-1970)}, 15\penalty0 (2):\penalty0
+  145--161, 1973.
+
+\bibitem[Costin and Friedman(2014)]{costin2014foundational}
+Ovidiu Costin and Harvey~M Friedman.
+\newblock Foundational aspects of singular integrals.
+\newblock \emph{Journal of Functional Analysis}, 267\penalty0 (12):\penalty0
+  4732--4752, 2014.
+
+\bibitem[Bonnet(1999)]{bonnet1999boundary}
+Marc Bonnet.
+\newblock Boundary integral equations methods in solids and fluids, 1999.
+
+\bibitem[Frankel(2006)]{frankel2006generalizing}
+Jay Frankel.
+\newblock Generalizing the method of kulish to one-dimensional unsteady heat
+  conducting slabs.
+\newblock \emph{Journal of thermophysics and heat transfer}, 20\penalty0
+  (4):\penalty0 945--949, 2006.
+
+\bibitem[Frankel(2007)]{frankel2007regularization}
+Jay~I Frankel.
+\newblock Regularization of inverse heat conduction by combination of rate
+  sensor analysis and analytic continuation.
+\newblock \emph{Journal of Engineering Mathematics}, 57\penalty0 (2):\penalty0
+  181--198, 2007.
+
+\bibitem[Santos and Galapon(2018)]{SPP-2018-PC-41}
+Leonarc~Michelle Santos and Eric~Alvarez Galapon.
+\newblock Extracting new representation of the hypergeometric function using
+  finite part integration.
+\newblock In \emph{Proceedings of the Samahang Pisika ng Pilipinas}, volume~36,
+  pages SPP--2018--PC--41, 2018.
+
+\bibitem[Villanueva and Galapon(2019)]{Villanueva_Galapon_2019}
+Lloyd Villanueva and Eric Galapon.
+\newblock New representation of gauss hypergeometric function via finite-part
+  integration.
+\newblock In \emph{Proceedings of the Samahang Pisika ng Pilipinas}, volume~37,
+  pages SPP--2019--PB--02, 2019.
+
+\bibitem[Santos and Galapon(2019)]{SPP-2019-PB-05}
+Leonarc~Michelle Santos and Eric~Alvarez Galapon.
+\newblock Two associated hypergeometric functions arising from finite part
+  integration.
+\newblock In \emph{Proceedings of the Samahang Pisika ng Pilipinas}, volume~37,
+  pages SPP--2019--PB--05, 2019.
+
+\bibitem[Tica and Galapon(2018)]{tica2018finite}
+Christian~D Tica and Eric~A Galapon.
+\newblock Finite-part integration of the generalized stieltjes transform and
+  its dominant asymptotic behavior for small values of the parameter. i.
+  integer orders.
+\newblock \emph{Journal of Mathematical Physics}, 59\penalty0 (2):\penalty0
+  023509, 2018.
+
+\bibitem[Tica and Galapon(2019)]{tica2019finite}
+Christian~D Tica and Eric~A Galapon.
+\newblock Finite-part integration of the generalized stieltjes transform and
+  its dominant asymptotic behavior for small values of the parameter. ii.
+  non-integer orders.
+\newblock \emph{Journal of Mathematical Physics}, 60\penalty0 (1):\penalty0
+  013502, 2019.
+
+\bibitem[Villanueva and Galapon(2021)]{doi:10.1063/5.0038274}
+Lloyd~L. Villanueva and Eric~A. Galapon.
+\newblock Finite-part integration in the presence of competing singularities:
+  Transformation equations for the hypergeometric functions arising from
+  finite-part integration.
+\newblock \emph{Journal of Mathematical Physics}, 62\penalty0 (4):\penalty0
+  043505, 2021.
+\newblock \doi{10.1063/5.0038274}.
+
+\bibitem[Karlsson(1983)]{karlsson1983some}
+Per~W Karlsson.
+\newblock Some reducible generalized kamp{\'e} de f{\'e}riet functions.
+\newblock \emph{Journal of mathematical analysis and applications}, 96\penalty0
+  (2):\penalty0 546--550, 1983.
+
+\bibitem[Cvijovi{\'c}(2008)]{cvijovic2008closed}
+Djurdje Cvijovi{\'c}.
+\newblock Closed-form summations of certain hypergeometric-type series
+  containing the digamma function.
+\newblock \emph{Journal of Physics A: Mathematical and Theoretical},
+  41\penalty0 (45):\penalty0 455205, 2008.
+
+\bibitem[Choi and Rathie(2019)]{choi2019general}
+JUNESANG Choi and ARJUN~K Rathie.
+\newblock General summation formulas for the kampe de feriet function.
+\newblock \emph{Montes Taurus J. Pure Appl. Math}, 1\penalty0 (1):\penalty0
+  107--128, 2019.
+
+\bibitem[Ali and Lachhwani(2013)]{ali2013some}
+Shoukat Ali and Kailash Lachhwani.
+\newblock On some reduction formulas of kampe de feriet function.
+\newblock In \emph{AIP Conference Proceedings}, volume 1536, pages 1343--1345.
+  American Institute of Physics, 2013.
+
+\bibitem[Kim et~al.(2014)Kim, Pogány, and Rathie]{article333}
+Yong Kim, Tibor Pogány, and Arjun Rathie.
+\newblock On a reduction formula for the kampe de feriet function.
+\newblock \emph{Hacettepe Journal of Mathematics and Statistics}, 02 2014.
+
+\bibitem[Villanueva(2019)]{lloydthetit}
+Lloyd~L. Villanueva.
+\newblock Finite-part integration in the presence of poles and branch points
+  and its application to ordinary hypergeometric function.
+\newblock BS Thesis, University of the Philippines, 2019.
+
+\bibitem[{Weisstein, Eric W.}()]{nbt}
+{Weisstein, Eric W.}
+\newblock { "Negative Binomial Series." From MathWorld--A Wolfram Web
+  Resource.}
+\newblock \url{ https://mathworld.wolfram.com/NegativeBinomialSeries.html }.
+\newblock Accessed: 2020-04-20.
+
+\bibitem[wol({\natexlab{a}})]{wolfram}
+{The Mathematical Functions Site - Wolfram} hypergeometricpfq.
+\newblock \url{http://functions.wolfram.com/07.27.06.0024.01}, {\natexlab{a}}.
+\newblock Accessed: 2020-04-20.
+
+\bibitem[Hardy(1940)]{hardy1940ramaniyan}
+Godfrey~Harold Hardy.
+\newblock \emph{Ramaniyan. Twelve Lectures on Subjects Suggested by His Life
+  and Work.[With a Portrait.].}
+\newblock University Press, 1940.
+
+\bibitem[wol({\natexlab{b}})]{wolfram1}
+{The Mathematical Functions Site - Wolfram} hypergeometricpfq.
+\newblock \url{https://functions.wolfram.com/07.27.06.0028.01}, {\natexlab{b}}.
+\newblock Accessed: 2020-04-20.
+
+\bibitem[Hansen(1975)]{hansen1975table}
+Eldon~R Hansen.
+\newblock A table of series and products.
+\newblock pages 360--366, 1975.
+
+\bibitem[Hardy(2018)]{hardy2018course}
+Godfrey~Harold Hardy.
+\newblock \emph{Course of Pure Mathematics}.
+\newblock Courier Dover Publications, 2018.
+
+\bibitem[Huelsman(1965)]{10.2307/24338342}
+Charles~B. Huelsman.
+\newblock Raabe's test.
+\newblock \emph{Pi Mu Epsilon Journal}, 4\penalty0 (2):\penalty0 67--70, 1965.
+\newblock ISSN 0031952X.
+\newblock URL \url{http://www.jstor.org/stable/24338342}.
+
+\bibitem[200(2008)]{2008189}
+Chapter 6 - natural boundaries.
+\newblock In Sanford~L. Segal, editor, \emph{Nine Introductions in Complex
+  Analysis}, volume 208 of \emph{North-Holland Mathematics Studies}, pages
+  189--256. North-Holland, 2008.
+\newblock \doi{https://doi.org/10.1016/S0304-0208(08)80007-2}.
+
+\bibitem[Fabry(1896)]{fabry1896points}
+Eug{\`e}ne Fabry.
+\newblock Sur les points singuliers d'une fonction donn{\'e}e par son
+  d{\'e}veloppement en s{\'e}rie et l'impossibilit{\'e} du prolongement
+  analytique dans des cas tr{\`e}s g{\'e}n{\'e}raux.
+\newblock In \emph{Annales scientifiques de l'{\'E}cole Normale
+  Sup{\'e}rieure}, volume~13, pages 367--399, 1896.
+
+\bibitem[dig()]{digamma}
+{The Mathematical Functions Site - Wolfram} polygamma.
+\newblock \url{http://functions.wolfram.com/06.14.16.0005.01}.
+\newblock Accessed: 2020-06-21.
+
+\bibitem[Erdelyi et~al.(1954)Erdelyi, Magnus, Oberhettinger, and
+  Tricomi]{erdelyi1954tables}
+Arthur Erdelyi, Wilhelm Magnus, Fritz Oberhettinger, and Francesco~G Tricomi.
+\newblock \emph{Tables of Integral Transforms: Vol.: 2}.
+\newblock McGraw-Hill Book Company, Incorporated, 1954.
+
+\bibitem[Tica(2017)]{ticathetit}
+Christian~D. Tica.
+\newblock Finite-part integration of the generalized stieltjes transformand its
+  dominant asymptotic behavior for small values of the parameter.
+\newblock BS Thesis, University of the Philippines, 2017.
+
+\bibitem[inc({\natexlab{a}})]{incgamma2}
+{The Mathematical Functions Site - Wolfram} gamma.
+\newblock \url{http://functions.wolfram.com/06.06.03.0011.01 }, {\natexlab{a}}.
+\newblock Accessed: 2020-06-21.
+
+\bibitem[wol({\natexlab{c}})]{wolfram2F2}
+{The Mathematical Functions Site - Wolfram} hypergeometricpfq.
+\newblock \url{
+  https://functions.wolfram.com/HypergeometricFunctions/\\Hypergeometric2F2/03/03/08/01/09/
+  }, {\natexlab{c}}.
+\newblock Accessed: 2020-04-20.
+
+\bibitem[inc({\natexlab{b}})]{incgamma}
+{The Mathematical Functions Site - Wolfram} gamma.
+\newblock \url{http://functions.wolfram.com/06.06.03.0003.01}, {\natexlab{b}}.
+\newblock Accessed: 2020-06-21.
+
+\bibitem[2f2()]{2f21}
+{The Mathematical Functions Site - Wolfram} hypergeometricpfq.
+\newblock \url{http://functions.wolfram.com/07.25.03.0076.01}.
+\newblock Accessed: 2020-06-21.
+
+\bibitem[{\relax DLMF}()]{NIST:DLMF}
+{\relax DLMF}.
+\newblock {\it NIST Digital Library of Mathematical Functions}.
+\newblock http://dlmf.nist.gov/, Release 1.1.1 of 2021-03-15.
+\newblock URL \url{\url{http://dlmf.nist.gov/}}.
+\newblock F.~W.~J. Olver, A.~B. {Olde Daalhuis}, D.~W. Lozier, B.~I. Schneider,
+  R.~F. Boisvert, C.~W. Clark, B.~R. Miller, B.~V. Saunders, H.~S. Cohl, and
+  M.~A. McClain, eds.
+
+\end{thebibliography}

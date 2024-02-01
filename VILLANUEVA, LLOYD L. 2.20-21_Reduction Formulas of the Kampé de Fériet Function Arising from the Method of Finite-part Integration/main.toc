@@ -1,0 +1,40 @@
+\contentsline {chapter}{Acknowledgments}{ii}{}%
+\contentsline {chapter}{Abstract}{iv}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {chapter}{\numberline {2}Finite-part Integration}{5}{}%
+\contentsline {section}{\numberline {2.1}Finite Part of the Divergent Integrals}{5}{}%
+\contentsline {section}{\numberline {2.2}Evaluation of Finite-part Integral}{8}{}%
+\contentsline {section}{\numberline {2.3}Complex Contour Integral Representation of the Finite-part Integral}{10}{}%
+\contentsline {subsection}{\numberline {2.3.1}Pole Singularity}{11}{}%
+\contentsline {subsection}{\numberline {2.3.2}Branch Point Singularity}{15}{}%
+\contentsline {section}{\numberline {2.4}Finite-part Integration of the Generalized Stieltjes Transform of an Entire Function}{17}{}%
+\contentsline {subsection}{\numberline {2.4.1}Finite-Part Integration of the Generalized Stieltjes Transform of an Entire Function with Integral Order}{18}{}%
+\contentsline {subsection}{\numberline {2.4.2}Finite-Part Integration of the Generalized Stieltjes Transform of an entire function with Branch Point at the Origin}{22}{}%
+\contentsline {subsection}{\numberline {2.4.3}Finite-Part Integration of the Generalized Stieltjes Transform of Non-integral Order of Entire Functions}{26}{}%
+\contentsline {section}{\numberline {2.5}Finite-part Integration in the Presence of Competing Singularities}{29}{}%
+\contentsline {subsection}{\numberline {2.5.1}Finite-part integration of the generalized Stieltjes transform of non-integral order}{31}{}%
+\contentsline {subsection}{\numberline {2.5.2}Finite-part integration of the generalized Stieltjes transform of integral order}{39}{}%
+\contentsline {chapter}{\numberline {3}Hypergeometric-type Series Containing Digamma Function}{44}{}%
+\contentsline {section}{\numberline {3.1}Definitions}{45}{}%
+\contentsline {section}{\numberline {3.2}Convergence of the general series}{45}{}%
+\contentsline {section}{\numberline {3.3}Singularities of the function ${}_{p}\tilde {\psi }_{q}$}{49}{}%
+\contentsline {subsection}{\numberline {3.3.1}Poles and essential singularity}{49}{}%
+\contentsline {subsection}{\numberline {3.3.2}Branch point and branch cut}{50}{}%
+\contentsline {section}{\numberline {3.4}Analytic continuation of $_{q+1}\tilde {\psi }_{q}$}{50}{}%
+\contentsline {subsection}{\numberline {3.4.1}The standard method of analytic continuation}{50}{}%
+\contentsline {subsection}{\numberline {3.4.2}Analytic continuation through the integral representation of digamma function}{51}{}%
+\contentsline {subsubsection}{Integration by parts}{53}{}%
+\contentsline {subsubsection}{Series decomposition}{56}{}%
+\contentsline {section}{\numberline {3.5}Relation of the function $_{p}\tilde {\psi }_{q}$ to Kampé de Fériet function}{59}{}%
+\contentsline {chapter}{\numberline {4}Reduction Formula of Kampé de Fériet function}{63}{}%
+\contentsline {section}{\numberline {4.1}Reduction formula from Generalized Stieltjes transform of $f(x) = e^{-bx}$}{64}{}%
+\contentsline {section}{\numberline {4.2}Reduction formula from integral representation of Gauss hypergeometric function ${}_2F_1$}{68}{}%
+\contentsline {subsection}{\numberline {4.2.1}Case 1: $\nu $, $\rho \in \mathbb {Z}^{+}$}{68}{}%
+\contentsline {subsubsection}{Case $m > n$}{75}{}%
+\contentsline {subsubsection}{Case $m \leq n$}{81}{}%
+\contentsline {subsubsection}{Special case: $m = 1$}{86}{}%
+\contentsline {subsection}{\numberline {4.2.2}Case 2: $\nu $, $\rho \not \in \mathbb {Z}^{+}$, $\nu -\rho \in \mathbb {Z}$}{88}{}%
+\contentsline {subsubsection}{Case $(\nu -\rho ) \in \mathbb {Z}^{+}$}{93}{}%
+\contentsline {subsubsection}{Case $(\rho -\nu ) \in \mathbb {Z}^{+}_{0}$ }{100}{}%
+\contentsline {chapter}{\numberline {5}Conclusion and Recommendation}{109}{}%
+\contentsline {chapter}{\numberline {A}Mathematica Notebook for numerical verification}{119}{}%
